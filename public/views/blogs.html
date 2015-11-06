@@ -1,0 +1,20 @@
+<div ng-controller="BlogsCtrl">
+
+<form ng-if="showCreate()" ng-submit="submit()">
+	<h2>Create a new blog!</h2>
+	<span>{{errorMessage}}</span>
+	<p>
+		<input type="text" ng-model="blogTitle" placeholder="Blog Title">
+	</p>
+	<p>
+		<input type="submit" id="submit" value="Create Blog">
+	</p>
+</form>
+
+<h2>Current blogs</h2>
+<div ng-repeat="blog in blogs track by blog._id">
+	<a ng-href="/#/blogs/{{blog._id}}/pages">{{blog.title}}</a>
+	<button ng-if="showCreate()" ng-click="deleteBlog(blog)">Delete</button>
+</div>
+
+</div>

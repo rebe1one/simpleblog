@@ -1,0 +1,14 @@
+<p>Log in to start posting</p>
+
+<form ng-submit="submit()" ng-controller="LoginCtrl">
+	<span>{{errorMessage}}</span>
+	<p>
+		<input type="text" ng-model="username" placeholder="Username">
+	</p>
+	<p>
+		<input type="password" ng-model="password" placeholder="Password">
+	</p>
+	<p>
+		<input type="submit" id="submit" value="Log In">
+	</p>
+</form>

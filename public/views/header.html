@@ -1,0 +1,14 @@
+<div class="row" ng-controller="HeaderCtrl">
+	<div class="col-xs-6">
+		<h1>{{title}}</h1>
+	</div>
+	<div class="col-xs-6" style="text-align: right;" ng-if="showUserInfo()">
+		<span ng-if="showUserInfo()">Hi {{username}}!</span>
+		<button ng-click="logout()">Log out</button>
+	</div>
+
+	<div class="col-xs-6" style="text-align: right;" ng-if="!showUserInfo()">
+		<button ng-click="login()">Log in</button>
+		<button ng-click="register()">Register</button>
+	</div>
+</div>

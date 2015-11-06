@@ -1,0 +1,27 @@
+doctype html
+html(lang='en' ng-app='blog' class='no-js')
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css', integrity='sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==', crossorigin='anonymous')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css', integrity='sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX', crossorigin='anonymous')
+
+  body
+    div(class='container')
+      div(ui-view='header')
+      div(ui-view='body')
+    script(src='javascripts/bower_components/angular/angular.js')
+    script(src='javascripts/bower_components/angular-route/angular-route.js')
+    script(src='javascripts/bower_components/angular-bootstrap/ui-bootstrap.js')
+    script(src='javascripts/bower_components/jquery/dist/jquery.js')
+    script(src='javascripts/bower_components/angular-ui-router/release/angular-ui-router.js')
+    script(src='javascripts/bower_components/ng-file-upload/ng-file-upload-shim.js')
+    script(src='javascripts/bower_components/ng-file-upload/ng-file-upload.js')
+    script(src='javascripts/bower_components/ngstorage/ngStorage.js')
+    script(src='javascripts/app.js')
+    script(src='javascripts/services.js')
+    script(src='javascripts/controllers.js')
+    script(src='javascripts/components/version/version.js')
+    script(src='javascripts/components/version/version-directive.js')
+    script(src='javascripts/components/version/interpolate-filter.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js', integrity='sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==', crossorigin='anonymous')

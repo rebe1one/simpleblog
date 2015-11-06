@@ -1,0 +1,37 @@
+<div ng-controller="PagesCtrl">
+
+	<h1>{{blog.title}}</h1>
+
+	<div ng-if="showCreate()" class="panel panel-default">
+		<form name="pageForm" enctype="multipart/form-data"  class="panel-body">
+			<h2>Create a new blog!</h2>
+			<span>{{errorMessage}}</span>
+			<p>
+				<input type="text" data-ng-model="pageTitle" placeholder="Blog Title" required/>
+			</p>
+			<p>
+				<textarea data-ng-model="pageBody" ng-minlength="1" ng-maxlength="160" placeholder="Body (Max 160 characters)" required></textarea>
+			</p>
+			<p>
+				Image (optional): 
+				<input type="file" ngf-select data-ng-model="file" name="file" accept="image/*" ngf-max-size="2MB"/>
+			</p>
+			<p>
+		    	<button ng-disabled="!pageForm.$valid" ng-click="submit(file)">Create Page</button>
+			</p>
+		</form>
+	</div>
+
+	<div ng-repeat="page in pages track by page._id" class="panel panel-default">
+	  <div class="panel-heading">
+    	<h3 class="panel-title">{{page.title}} <button ng-if="showCreate()" ng-click="deletePage(page)">Delete</button></h3>
+	  </div>
+	  <div class="panel-body">
+	  	{{page.body}}
+	  	<img ng-if="page.imagePath" class="img-responsive" ng-src="{{page.imagePath}}"/>
+	  </div>
+	</div>
+
+	<span ng-if="pages.length == 0">Looks like this blog is empty :(</span>
+
+</div>
